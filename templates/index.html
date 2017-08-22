@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{$TITLE}</title>
+		<base href="{$BASEDIR}" />
+		<meta name="description" content="{$DESCRIPTION}">
+		<meta name="author" content="RocksBrasil - www.rocksbrasil.com.br">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8"/>
+		<link rel="stylesheet" href="css/global.css" type="text/css" media="screen" charset="utf-8"/>
+		<link rel="stylesheet" href="css/estilo.css" type="text/css" media="screen" charset="utf-8"/>
+		<link rel="stylesheet" href="css/theme.css" type="text/css" media="screen" charset="utf-8"/>
+		<link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+		<link rel="stylesheet" href="css/font-worksans.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+		<link rel="stylesheet" href="css/font-pathway.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mask.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.autosize.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="master flex-container flex-align-center flex-align-middle">
+			{include 'content.html'}
+			<div>
+				<div class="whitebox">
+					<div class="form">
+						{include 'form.html'}
+						<div class="spamtext">
+							<p>{$smarty.const.TPL_SPAM_TEXT|default:''}</p>
+						</div>
+					</div>
+					<div class="social">
+						<ul>
+							<a href=""><li class="transition"><i class="fa fa-facebook"></i></li></a>
+							<a href=""><li class="transition"><i class="fa fa-twitter"></i></li></a>
+							<a href=""><li class="transition"><i class="fa fa-youtube"></i></li></a>
+							<a href=""><li class="transition"><i class="fa fa-dropbox"></i></li></a>
+							<a href=""><li class="transition"><i class="fa fa-github"></i></li></a>
+							<a href=""><li class="transition"><i class="fa fa-vimeo"></i></li></a>
+						</ul>
+					</div>
+				</div>
+				<div class="powered noselect"><p><a target="_new" href="http://www.rocksbrasil.com.br">powered by <b><img src="images/footer.png"></b></a></p></div>
+			</div>
+		</div>
+	</body>
+</html>

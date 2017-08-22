@@ -1,0 +1,52 @@
+{if $fields|default:0}
+<form method="post" enctype="multipart/form-data">
+	<div class="head">
+		<h4>{$smarty.const.TPL_FORM_TITLE|default:''}</h4>
+		<p>{$smarty.const.TPL_FORM_TEXT|default:''}</p>
+	</div>
+	{foreach $fields as $fkey => $field}{if $fkey != "captcha"}<fieldset class="{if $field['error']|default:0}error{/if} {$field['class']|default:''}">
+		<figure><i class="fa {$field['fa-icon']|default:'fa-circle-thin'}"></i></figure>
+		{if $field['type'] == 'select'}
+		<select name="{$field['name']|default:$fkey}" {if $field['required']|default:0}required{/if} {if $field['disabled']|default:0}disabled{/if} class="{$field['class']|default:''}">
+			{if $field['placeholder']|default:0}<option selected disabled>{$field['placeholder']}</option>{/if}
+			{foreach $field['options'] as $optkey => $optval}
+			<option value="{$optkey}" {if $field['value']|default:'' == $optkey}selected{/if}>{$optval}</option>
+			{/foreach}
+		</select>
+		{elseif $field['type'] == 'textarea'}<textarea name="{$field['name']|default:$fkey}" type="{$field['type']|default:'text'}" placeholder="{$field['placeholder']|default:''}" {if $field['mask']}data-mask="{$field['mask']}"{/if} {if $field['required']|default:0}required{/if} maxlength="{$field['maxlen']|default:300}" class="{$field['class']|default:''}" {if $field['disabled']|default:0}disabled{/if}>{$field['value']|default:''}</textarea>
+		{else}<input name="{$field['name']|default:$fkey}" type="{$field['type']|default:'text'}" placeholder="{$field['placeholder']|default:''}" {if $field['mask']}data-mask="{$field['mask']}"{/if} {if $field['required']|default:0}required{/if} maxlength="{$field['maxlen']|default:300}" value="{$field['value']|default:''}" class="{$field['class']|default:''}" {if $field['disabled']|default:0}disabled{/if}>{/if}
+		<hr/>
+	</fieldset>{/if}{/foreach}
+	{if $smarty.const.REQUIRE_CAPTCHA && !$submitted}
+	<fieldset class="{if $fields['captcha']['error']|default:0}error{/if} captcha">
+		<figure>
+			<img src="{$URL}?captcha-image">
+		</figure>
+		<input type="text" name="captcha" placeholder="Captcha:">
+	</fieldset>
+	{/if}
+	{if !$submitted|default:0}
+	<fieldset>
+		<button type="submit" class="send-button">
+			<div class="flex-container flex-align-left flex-align-middle flex-nowrap">
+				<figure class="flex-stretch">
+					<i class="fa fa-send"></i>
+				</figure>
+				<div><h6>{$smarty.const.TPL_SUBMIT_BUTTON_TEXT}</h6></div>
+			</div>
+		</button>
+	</fieldset>
+	{else}
+	<fieldset>
+		<button type="button" class="check-button">
+			<div class="flex-container flex-align-left flex-align-middle flex-nowrap">
+				<figure class="flex-stretch">
+					<i class="fa fa-check"></i>
+				</figure>
+				<div><h6>{$smarty.const.TPL_SUBMITTED_BUTTON_TEXT}</h6></div>
+			</div>
+		</button>
+	</fieldset>
+	{/if}
+</form>
+{/if}

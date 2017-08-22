@@ -1,0 +1,2 @@
+[22-Aug-2017 04:29:40 America/Sao_Paulo] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template file 'content.html' in 'index.html' <-- 
+  thrown in C:\wamp64\www\capture-form\plugins\smarty\sysplugins\smarty_internal_template.php on line 139

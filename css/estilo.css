@@ -1,0 +1,189 @@
+body, html{
+	position:relative;
+	background:#ecf0f5;
+	width:100%;
+	min-height:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+}
+body .master{
+	position:relative;
+	min-height:100%;
+	padding:20px;
+}
+h1,h2,h3,h4,h5,h6,p,input, label{
+	font-family:WorkSans;
+}
+a{
+	color:inherit;
+	text-decoration:inherit;
+}
+.whitebox{
+	background:#ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin:20px;
+    margin-bottom:0;
+}
+.whitebox .form{
+	width:280px;
+	padding:20px;
+}
+.powered{
+	padding:10px 25px;
+	color:#333333;
+	font-size:8px;
+	text-align:right;
+	vertical-align:middle;
+	font-weight:normal;
+}
+.spamtext p{
+	font-size:10px;
+}
+.powered b{
+	font-weight:bold;
+	font-size:10px;
+}
+.powered img{
+	vertical-align:middle;
+}
+.social{
+	border-top:1px solid #dddddd;
+	padding:2px;
+}
+.social ul{
+	text-align:center;
+}
+.social li{
+	position:relative;
+	display:inline-block;
+	width:30px;
+	height:30px;
+	margin:2px;
+	line-height:30px;
+	border-radius:50%;
+	color:#444444;
+}
+.social li:hover{
+	background:#eeeeee;
+}
+
+form{
+	position:relative;
+	padding:0;
+	margin:0;
+}
+form .head{
+	margin-bottom:10px;
+	color:#333333;
+}
+form .head h4{
+	font-size:20px;
+	font-weight:bold;
+}
+form .head p{
+	font-size:14px;
+}
+form fieldset{
+	position:relative;
+	max-width:100%;
+	margin-bottom:5px;
+	margin-right:0px;
+}
+form fieldset.split{
+	width:50%;
+	display:inline-block;
+}
+form fieldset figure{
+	position:absolute;
+	top:0;
+	left:0;
+	width:40px;
+	min-height:100%;
+	color:#333333;
+	font-size:14px;
+	text-align:center;
+	line-height:40px;
+}
+form fieldset input, form fieldset select, form fieldset textarea{
+	position:relative;
+	border:1px solid #dddddd;
+	width:100%;
+	z-index:2;
+	padding:10px;
+	font-size:14px;
+	font-weight:normal;
+	outline:none;
+	border-radius:3px;
+	background:transparent;
+	resize:vertical;
+}
+form fieldset.error input, form fieldset.error select, form fieldset.error textarea{
+	border-color:#FF7373;
+}
+form fieldset figure + input, form fieldset figure + select, form fieldset figure + textarea{
+	padding-left:40px;
+}
+form fieldset button{
+	-webkit-appearance: none;
+	font-size:20px;
+	width:100%;
+	border:0;
+	background:#C8422D;
+	border-radius:3px;
+	padding:0;
+	outline-color:none;
+	cursor:pointer;
+}
+form fieldset button.check-button{
+	background:#85B200;
+}
+form fieldset button figure{
+	position:relative;
+	margin:0;
+	padding:0;
+	background:rgba(255,255,255,0.2);
+	color:#ffffff;
+}
+form fieldset hr{
+	position:absolute;
+	margin:0;
+	padding:0;
+	width:0;
+	left:0;
+	top:auto;
+	bottom:0;
+	height:3px;
+	background:#cccccc;
+	border:0;
+	transition:all 200ms linear;
+	-webkit-transition:all 200ms linear;
+	-moz-transition:all 200ms linear;
+	-ms-transition:all 200ms linear;
+	transition-delay:100ms;
+	-webkit-transition-delay:100ms;
+	-moz-transition-delay:100ms;
+	z-index:6;
+	border-radius:3px;
+	left:50%;
+}
+form fieldset input:focus + hr, form fieldset select:focus + hr, form fieldset textarea:focus + hr{
+	width:96%;
+	left:2%;
+}
+form fieldset button h6{
+	padding:5px 10px;
+	font-size:16px;
+	font-weight:600;
+	color:#ffffff;
+}
+form fieldset.captcha figure{
+	width:80px;
+	height:60px;
+}
+form fieldset.captcha input{
+	height:50px;
+	padding-left:85px;
+}
