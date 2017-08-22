@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body style="max-width:800px;">
+		<h3 style="font-family:helvetica;">Você recebeu um novo contato!</h3>
+		<table width="100%" style="margin:30px 0;border-bottom:1px solid #ccc;">
+			{foreach $fields as $key => $value}
+			<tr style="font-family:helvetica;">
+				<td width="150" align="right">
+					<b>{$value['placeholder']|default:$key}</b>:
+				</td>
+				<td>
+					{$value['value']|default:''}
+				</td>
+			</tr>
+			{/foreach}
+		</table>
+	</body>
+</html>

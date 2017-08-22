@@ -9,12 +9,15 @@
  * ---------------------------------- */
 define('REQUIRE_CAPTCHA', true);
 // smtp config
+define('MAIL_SUBJECT', 'Novo contato');
 define('SMTP_SECURE', false);// protocolos de segurança (tls/ssl)
 define('SMTP_HOST', 'localhost');// smtp server host
 define('SMTP_PORT', 25);// smtp server port
-define('SMTP_USER', false);// smtp server user
-define('SMTP_PASS', false);// smtp server pass
+define('SMTP_USER', null);// smtp server user
+define('SMTP_PASS', null);// smtp server pass
 define('SMTP_FROM', SMTP_USER);// from email
+define('SMTP_FROM_NAME', SMTP_USER);// from email name
+define('SMTP_DEBUG', true);// debug mail on web console
 // template vars
 define('TPL_TITLE', 'Fale conosco!');// título da página
 define('TPL_DESCRIPTION', 'Contate-nos!');// decrição da página
@@ -23,6 +26,14 @@ define('TPL_SUBMITTED_BUTTON_TEXT', 'Enviado');
 define('TPL_SPAM_TEXT', '* Também odiamos spam, seus dados estarão seguros conosco!');
 define('TPL_FORM_TITLE', 'Contate-nos!');
 define('TPL_FORM_TEXT', 'Estamos anciosos em falar com você.');
+
+/* ENDEREÇOS PARA ENTREGA
+ * adicione ou remova os destinatários do contato,
+ * no array abaixo, key = Nome, Value = email
+ * ---------------------------------- */
+$address = Array(
+	'Contato' => 'contato@seudominio.com.br'
+);
 
 /* CAMPOS DO FORMULÁRIO
  * adicione ou remova os campos seguindo o padrão

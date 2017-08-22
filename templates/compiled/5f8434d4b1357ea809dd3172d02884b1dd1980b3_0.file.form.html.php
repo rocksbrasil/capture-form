@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-08-22 04:35:40
+/* Smarty version 3.1.29, created on 2017-08-22 05:26:07
   from "C:\wamp64\www\capture-form\templates\form.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_599bdecce63d72_55960298',
+  'unifunc' => 'content_599bea9f2f4009_41797665',
   'file_dependency' => 
   array (
     '5f8434d4b1357ea809dd3172d02884b1dd1980b3' => 
     array (
       0 => 'C:\\wamp64\\www\\capture-form\\templates\\form.html',
-      1 => 1503387333,
+      1 => 1503390360,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_599bdecce63d72_55960298 ($_smarty_tpl) {
+function content_599bea9f2f4009_41797665 ($_smarty_tpl) {
 if ((($tmp = @$_smarty_tpl->tpl_vars['fields']->value)===null||$tmp==='' ? 0 : $tmp)) {?>
 <form method="post" enctype="multipart/form-data">
 	<div class="head">
@@ -139,6 +139,13 @@ $_smarty_tpl->tpl_vars['fkey'] = $__foreach_field_0_saved_key;
 			</div>
 		</button>
 	</fieldset>
+	<?php }?>
+	<?php if ((($tmp = @$_smarty_tpl->tpl_vars['failed']->value)===null||$tmp==='' ? 0 : $tmp)) {?>
+	<?php echo '<script'; ?>
+>
+	alert('Ocorreu um problema ao enviar seu contato, tente novamente mais tarde!');
+	<?php echo '</script'; ?>
+>
 	<?php }?>
 </form>
 <?php }

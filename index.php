@@ -13,6 +13,7 @@ require('config.php');
 require('functions.php');
 require('plugins/form/form.php');
 require('plugins/smarty/Smarty.class.php');
+require('plugins/phpmailer/PHPMailerAutoload.php');
 $form = new form();
 $smarty = new Smarty();
 $smarty->template_dir = 'templates/';
@@ -62,9 +63,61 @@ if($_POST){
 		$form->valideForm();
 		if(!$form->errors){
 			// enviar formulário
-			$_TEMPLATE['submitted'] = 1;
-			foreach ($form->fields as $key => $value) {
-				$form->addFieldAttribute($key, 'disabled', '1');
+			$smarty->assign('fields', $form->fields);
+			$body = $smarty->fetch('email/contato.html');
+			$mailDebug = '';
+			$mailSmtp = Array(
+				'host' => SMTP_HOST,
+				'port' => SMTP_PORT,
+				'user' => SMTP_USER,
+				'pass' => SMTP_PASS,
+				'secure' => SMTP_SECURE,
+				'debug' => true,
+			);
+			ob_start();
+			// phpmailer
+			$mail = new PHPMailer;
+			if(isset($mailSmtp['host']) && isset($mailSmtp['port'])){
+				$mail->isSMTP();
+				$mail->SMTPDebug = (isset($mailSmtp['debug']))? $mailSmtp['debug']: false;
+				$mail->Host = $mailSmtp['host'];
+				$mail->Port = $mailSmtp['port'];
+				if(isset($mailSmtp['user']) && isset($mailSmtp['pass'])){
+					$mail->SMTPAuth = true;
+					$mail->Username =  $mailSmtp['user'];
+					$mail->Password =  $mailSmtp['pass'];
+					$mail->setFrom(SMTP_FROM, SMTP_FROM_NAME);
+				}
+				if(isset($mailSmtp['secure'])){
+					$mail->SMTPSecure = $mailSmtp['secure'];
+				}
+			}
+			$mail->SMTPOptions = array(
+			    'ssl' => array(
+			        'verify_peer' => false,
+			        'verify_peer_name' => false,
+			        'allow_self_signed' => true
+			    )
+			);
+			$mail->CharSet = 'UTF-8';
+			$mail->isHTML(true);
+			$mail->Subject = MAIL_SUBJECT;
+			$mail->Body = $body;
+			$mail->FromName = SMTP_FROM_NAME;
+			foreach ($address as $key => $value) {
+				$mail->addAddress($value, $key);
+			}
+			$mailResult = $mail->send();
+			$mailDebug = utf8_decode(ob_get_clean());
+			if(!$mailResult){
+				$_TEMPLATE['failed'] = 1;
+				$_TEMPLATE['printDebug'] = (SMTP_DEBUG)? $mailDebug: null;
+			}else{
+				unset($_SESSION['captcha']);
+				$_TEMPLATE['submitted'] = 1;
+				foreach ($form->fields as $key => $value) {
+					$form->addFieldAttribute($key, 'disabled', '1');
+				}
 			}
 		}
 	}elseif(REQUIRE_CAPTCHA){

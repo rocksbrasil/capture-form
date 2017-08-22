@@ -48,5 +48,10 @@
 		</button>
 	</fieldset>
 	{/if}
+	{if $failed|default:0}
+	<script>
+	alert('Ocorreu um problema ao enviar seu contato, tente novamente mais tarde!');
+	</script>
+	{/if}
 </form>
 {/if}
