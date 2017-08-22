@@ -18,6 +18,7 @@ local.properties
 templates/compiled/*
 *.log
 
+
 # External tool builders
 .externalToolBuilders/
 
