@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-08-22 05:26:44
+/* Smarty version 3.1.29, created on 2017-08-22 13:24:15
   from "C:\wamp64\www\capture-form\templates\index.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_599beac44c8ce6_21089480',
+  'unifunc' => 'content_599c5aafb07532_21988611',
   'file_dependency' => 
   array (
     'bfbdc639ea33737932bcdf475d8da8ba5189da65' => 
     array (
       0 => 'C:\\wamp64\\www\\capture-form\\templates\\index.html',
-      1 => 1503390393,
+      1 => 1503419054,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:form.html' => 1,
   ),
 ),false)) {
-function content_599beac44c8ce6_21089480 ($_smarty_tpl) {
+function content_599c5aafb07532_21988611 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ptbr">
@@ -40,6 +40,7 @@ function content_599beac44c8ce6_21089480 ($_smarty_tpl) {
 		<link rel="stylesheet" href="css/global.css" type="text/css" media="screen" charset="utf-8"/>
 		<link rel="stylesheet" href="css/estilo.css" type="text/css" media="screen" charset="utf-8"/>
 		<link rel="stylesheet" href="css/theme.css" type="text/css" media="screen" charset="utf-8"/>
+		<link rel="stylesheet" href="css/content.css" type="text/css" media="screen" charset="utf-8"/>
 		<link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
 		<link rel="stylesheet" href="css/font-worksans.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
 		<link rel="stylesheet" href="css/font-pathway.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
@@ -56,7 +57,7 @@ function content_599beac44c8ce6_21089480 ($_smarty_tpl) {
 	<body>
 		<?php echo (($tmp = @$_smarty_tpl->tpl_vars['printDebug']->value)===null||$tmp==='' ? '' : $tmp);?>
 
-		<div class="master flex-container flex-align-center flex-align-middle">
+		<div class="master flex-container flex-align-center flex-align-top">
 			<?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:content.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

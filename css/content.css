@@ -1,0 +1,28 @@
+#content{
+	position:relative;
+	width:800px;
+	max-width:100%;
+}
+#content .padding4{
+	padding:20px;
+}
+#content .icon{
+	width:30px;
+	font-size:18px;
+	text-align:left;
+}
+#content-head img{
+	max-height:200px;
+}
+#content-head .desc{
+	margin:0 20px;
+}
+@media screen and (max-width:600px){
+	#content-head{
+		flex-wrap:wrap;
+		text-align:center;
+	}
+	#content-head .desc{
+		margin-top:10px;
+	}
+}

@@ -10,15 +10,44 @@ body, html{
 body .master{
 	position:relative;
 	min-height:100%;
-	padding:20px;
+	padding:20px 0;
 }
 h1,h2,h3,h4,h5,h6,p,input, label{
 	font-family:WorkSans;
+	color:#333333;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:600;
+}
+.regular{
+	font-weight:normal;
 }
 a{
 	color:inherit;
 	text-decoration:inherit;
 }
+h1{
+	font-size:30px;
+}
+h2{
+	font-size:26px;
+}
+h3{
+	font-size:20px;
+}
+h4{
+	font-size:16px;
+}
+h5{
+	font-size:14px;
+}
+h6{
+	font-size:10px;
+}
+p{
+	font-size:12px;
+}
+
 .whitebox{
 	background:#ffffff;
     border-radius: 3px;
@@ -31,6 +60,12 @@ a{
 	width:280px;
 	padding:20px;
 }
+@media screen and (max-width:600px){
+	.whitebox .form{
+		width:auto;
+		max-width:100%;
+	}
+}
 .powered{
 	padding:10px 25px;
 	color:#333333;
@@ -42,8 +77,8 @@ a{
 .spamtext p{
 	font-size:10px;
 }
-.powered b{
-	font-weight:bold;
+.powered p{
+	font-weight:normal;
 	font-size:10px;
 }
 .powered img{
@@ -119,6 +154,7 @@ form fieldset input, form fieldset select, form fieldset textarea{
 	border-radius:3px;
 	background:transparent;
 	resize:vertical;
+	-webkit-appearance:none;
 }
 form fieldset.error input, form fieldset.error select, form fieldset.error textarea{
 	border-color:#FF7373;
@@ -186,4 +222,11 @@ form fieldset.captcha figure{
 form fieldset.captcha input{
 	height:50px;
 	padding-left:85px;
+}
+
+hr{
+	border:0;
+	width:100%;
+	height:1px;
+	background:#dddddd;
 }
