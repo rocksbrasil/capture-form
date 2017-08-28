@@ -17,7 +17,7 @@
 		{else}<input name="{$field['name']|default:$fkey}" type="{$field['type']|default:'text'}" placeholder="{$field['placeholder']|default:''}" {if $field['mask']|default:''}data-mask="{$field['mask']}"{/if} {if $field['required']|default:0}required{/if} maxlength="{$field['maxlen']|default:300}" value="{$field['value']|default:''}" class="{$field['class']|default:''}" {if $field['disabled']|default:0}disabled{/if}>{/if}
 		<hr/>
 	</fieldset>{/if}{/foreach}
-	{if $smarty.const.REQUIRE_CAPTCHA && !$submitted}
+	{if $smarty.const.REQUIRE_CAPTCHA && !$submitted|default:0}
 	<fieldset class="{if $fields['captcha']['error']|default:0}error{/if} captcha">
 		<figure>
 			<img src="{$URL}?captcha-image">
