@@ -6,7 +6,7 @@
 @session_start();
 ini_set("log_errors", 1);
 ini_set("error_log", "capture-errors.log");
-error_reporting(E_ERROR);
+error_reporting(E_ALL);
 setlocale(LC_ALL, 'pt_BR');
 date_default_timezone_set('America/Sao_Paulo');
 require('config.php');
@@ -61,7 +61,7 @@ if($_POST){
 	$form->arrayToFieldValues($_POST, false);
 	if(!REQUIRE_CAPTCHA || (isset($_SESSION['captcha']) && isset($_REQUEST['captcha']) && $_SESSION['captcha'] == $_REQUEST['captcha'])){
 		$form->valideForm();
-		if(!$form->errors){
+		if(!$form->formErrors){
 			// enviar formulário
 			$smarty->assign('fields', $form->fields);
 			$body = $smarty->fetch('email/contato.html');
